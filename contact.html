@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="./img/favicon.png">
+    <link rel="stylesheet" type="text/css" href="css/reset.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@1,500&family=Open+Sans:wght@300&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css"
+        integrity="sha512-oHDEc8Xed4hiW6CxD7qjbnI+B07vDdX7hEPTvn9pSZO1bcRqHp8mj9pyr+8RVC2GmtEfI2Bi9Ke9Ass0as+zpg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
+    <title>Contact</title>
+</head>
+
+<body>
+    <header>
+        <div class="page-header">
+            <img src="img/logo.png" class="page-header__item" alt="logo" id="logo">
+            <nav class="main-nav page-header__item">
+                <ul role="menubar" class="navlist">
+                    <li role="presentation">
+                        <a href="index.html" role="menuitem" class="navlist__item">Home</a>
+                    </li>
+                    <li role="presentation">
+                        <a href="about.html" role="menuitem" class="navlist__item">About Me</a>
+                    </li>
+                    <li role="presentation">
+                        <a href="work.html" role="menuitem" class="navlist__item">Work</a>
+                    </li>
+                    <li role="presentation">
+                        <a href="contact.html" role="menuitem" class="navlist__item navlist__item--active">Contact</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <container class="contact__mycontact">
+        <h1>Contact</h1>
+        <div>
+            <p class="contact__mycontact-item">Telephone <a href="tel:+13233372837"
+                    aria-label="+1. 3 2 3. 3 3 7. 2 8 3 7">(323)337-2837</a></p>
+            <p class="contact__mycontact-item"> Email <a href="mailto:junyuwan@usc.edu">junyuwan@usc.edu</a></p>
+            <a href="files/JunyuWang_Resume.pdf" class="button contact__mycontact-item" id="resume">Check out my
+                resume!</a>
+        </div>
+    </container>
+    <div class="contact__message">
+        <form class="contact__message-form">
+            <h1>...Or leave me a message</h1>
+            <label for="email">Email</label><br>
+            <input type="text" id="email">
+            <br>
+            <label for="tel">Tel</label><br>
+            <input type="text" id="tel"><br>
+            <label for="msg">Message</label><br>
+            <textarea id="msg"></textarea><br>
+
+            <input type="submit">
+        </form>
+    </div>
+    <footer class="page-footer">
+        <p>Find me on</p>
+        <div>
+            <img src="img/github.svg" alt="Github" width="30px" height="30px">
+            <img src="img/twitter.svg" alt="Twitter" width="30px" height="30px">
+            <img src="img/linkedin.svg" alt="LinkedIn" width="30px" height="30px">
+        </div>
+    </footer>
+    <script src="js/tota11y.min.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,273 @@
+* {
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-color: #f5f5dc;
+    --secondary-color: #6D4931;
+    --third-color: #424A26;
+    --button-color: #d0b8ac;
+    --button-color-hover: #d0b8ac7f;
+    --button-border: 2px solid rgba(0, 0, 0, 0.1);
+    --button-border-hover: 3px solid rgba(0, 0, 0, 0.1);
+}
+
+body {
+    background-color: var(--primary-color);
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 600;
+    font-variant: small-caps;
+    color: var(--secondary-color);
+    line-height: 1.5em;
+    font-size: 25px;
+    height: 100vh;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+}
+
+#logo {
+    height: 100px;
+    width: auto;
+}
+
+h1 {
+    font-weight: bold;
+    font-size: 50px;
+}
+
+a {
+    color: var(--secondary-color);
+}
+
+a:visited {
+    /* visited link */
+    color: var(--third-color);
+}
+
+a:hover,
+a:focus {
+    text-decoration: none;
+}
+
+a:active {
+    color: var(--secondary-color);
+    text-decoration: none;
+}
+
+button,
+.button {
+    /* overwrites browser defaults and resets the border */
+    border: none;
+    /* takes the font from the outer container */
+    font-family: inherit;
+    /* styles the background color, font color, and text decoration (underline, etc.) of the button */
+    background-color: var(--button-color);
+    color: var(--secondary-color);
+    text-decoration: none;
+    /*adds spacing to the button (this will be discussed more in-depth later) */
+    padding: 10px;
+    border-radius: 3px;
+    /* gives the button a bottom border with a width of 2px, a type of solid, and a color in RGBA format */
+    border-bottom: var(--button-border);
+    border-right: var(--button-border);
+    transition-duration: 0.2s;
+    transition-property: opacity;
+}
+
+button:hover,
+button:focus,
+.button:focus,
+.button:hover {
+    /* lets the mouse appear as a hand when hovering over the button */
+    cursor: pointer;
+    /* reduces the opacity of the button to 80% */
+    opacity: 0.8;
+    background-color: var(--button-color-hover);
+    border-bottom: var(--button-border-hover);
+    border-right: var(--button-border-hover);
+}
+
+
+.profile__portrait {
+    float: left;
+    width: 10em;
+    height: auto;
+    margin-right: 40px;
+    border-radius: 50%;
+}
+
+.page-footer {
+    clear: both;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.profile {
+    max-width: 1200px;
+    min-width: 320px;
+    margin: 0 auto;
+}
+
+.profile__text,
+.profile__heading {
+    flex: 1 1 100px;
+}
+
+.page-header {
+    display: flex;
+    width: 100%;
+    padding: 20px;
+    justify-content: space-between;
+}
+
+.page-header__item {
+    display: flex;
+    align-items: center;
+}
+
+.page-header__item:last-child {
+    flex-grow: 0;
+    text-align: right;
+}
+
+/* .navlist {
+    list-style-type: none;
+} */
+
+.navlist li {
+    display: inline-block;
+    margin-left: 15px;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 20px;
+}
+
+.grid__item {
+    padding: 20px;
+    background-color: bisque;
+    margin-right: 10px;
+    margin-left: 10px;
+}
+
+@media all and (max-width: 500px) {
+    .grid {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+@media all and (min-width: 500px) and (max-width: 750px) {
+    .grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+}
+
+@media all and (max-width: 750px) {
+    .grid__item:last-child {
+        grid-column: auto / auto;
+        grid-row: auto / auto;
+    }
+
+    h1 {
+        font-size: 22px;
+    }
+
+    .grid {
+        grid-gap: 10px;
+    }
+}
+
+.journey {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.journey__flags {
+    justify-content: space-around;
+    animation-duration: 10s;
+    animation-name: flag-move;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-timing-function: linear;
+}
+
+@keyframes flag-move {
+    from {
+        transform: translate(0, 0);
+    }
+
+    to {
+        transform: translate(200px, 0);
+    }
+}
+
+.navlist a {
+    text-decoration: none;
+    margin: 0px 10px;
+    padding: 10px 10px;
+    position: relative;
+    z-index: 0;
+    cursor: pointer;
+}
+
+.navlist a:before,
+.navlist a:after {
+    position: absolute;
+    left: 0px;
+    width: 100%;
+    height: 2px;
+    background: var(--third-color);
+    content: "";
+    opacity: 0;
+    transition: all 0.3s;
+}
+
+.navlist a:before {
+    top: 0px;
+    transform: translateY(10px);
+}
+
+.navlist a:after {
+    bottom: 0px;
+    transform: translateY(-10px);
+}
+
+.navlist a:hover:before,
+.navlistv a:hover:after {
+    opacity: 1;
+    transform: translateY(0px);
+}
+
+#resume {
+    padding: 10px 10px;
+}
+
+.contact__mycontact {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.contact__mycontact-item {
+    padding: 10px;
+}
+
+.contact__message {
+    width: 50%;
+}
+
+.contact__message-form {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: space-around;
+}
