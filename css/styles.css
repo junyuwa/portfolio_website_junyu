@@ -16,7 +16,6 @@ body {
     background-color: var(--primary-color);
     font-family: 'Open Sans', sans-serif;
     font-weight: 600;
-    font-variant: small-caps;
     color: var(--secondary-color);
     line-height: 1.5em;
     font-size: 25px;
@@ -45,14 +44,14 @@ a:visited {
     color: var(--third-color);
 }
 
-a:hover,
+/* a:hover,
 a:focus {
     text-decoration: none;
-}
+} */
 
 a:active {
     color: var(--secondary-color);
-    text-decoration: none;
+    /* text-decoration: none; */
 }
 
 button,
@@ -64,7 +63,7 @@ button,
     /* styles the background color, font color, and text decoration (underline, etc.) of the button */
     background-color: var(--button-color);
     color: var(--secondary-color);
-    text-decoration: none;
+    /* text-decoration: none; */
     /*adds spacing to the button (this will be discussed more in-depth later) */
     padding: 10px;
     border-radius: 3px;
@@ -115,6 +114,20 @@ button:focus,
 .profile__text,
 .profile__heading {
     flex: 1 1 100px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.profile:last-child {
+    flex-grow: 0;
+    text-align: right;
+}
+
+#letstalk,
+#resume {
+    margin-top: 20px;
+    padding: 10px 10px;
+    text-decoration: none;
 }
 
 .page-header {
@@ -185,7 +198,7 @@ button:focus,
     }
 }
 
-.journey {
+/* .journey {
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -208,7 +221,7 @@ button:focus,
     to {
         transform: translate(200px, 0);
     }
-}
+} */
 
 .navlist a {
     text-decoration: none;
@@ -247,22 +260,23 @@ button:focus,
     transform: translateY(0px);
 }
 
-#resume {
-    padding: 10px 10px;
+.about {
+    display: flex;
+    align-items: space-around;
+    justify-content: space-around;
+    text-align: center;
+    flex-direction: column;
 }
 
 .contact__mycontact {
     display: flex;
     flex-direction: column;
     text-align: center;
+    justify-content: space-around;
 }
 
 .contact__mycontact-item {
     padding: 10px;
-}
-
-.contact__message {
-    width: 50%;
 }
 
 .contact__message-form {
