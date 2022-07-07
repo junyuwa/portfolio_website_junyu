@@ -54,6 +54,14 @@ a:active {
     /* text-decoration: none; */
 }
 
+a.button {
+    -webkit-appearance: button;
+    -moz-appearance: button;
+    appearance: button;
+
+    text-decoration: none;
+}
+
 button,
 .button {
     /* overwrites browser defaults and resets the border */
