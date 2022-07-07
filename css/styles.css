@@ -30,6 +30,18 @@ body {
     width: auto;
 }
 
+@media all and (min-width: 500px) {
+.main-nav__icon {
+    display: none;
+}
+}
+
+@media all and (max-width: 500px) {
+    .navlist {
+        display: none;
+    }
+    }
+
 h1 {
     font-weight: bold;
     font-size: 50px;
@@ -263,7 +275,7 @@ button:focus,
 }
 
 .navlist a:hover:before,
-.navlistv a:hover:after {
+.navlist a:hover:after {
     opacity: 1;
     transform: translateY(0px);
 }
