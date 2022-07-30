@@ -25,7 +25,7 @@
         <div class="page-header">
             <img src="img/logo.png" class="page-header__item" alt="logo" id="logo">
             <nav class="main-nav page-header__item">
-                <ul role="menubar" class="navlist">
+                <ul role="menubar" class="navlist" id="navlist">
                     <li role="presentation">
                         <a href="index.html" role="menuitem" class="navlist__item">Home</a>
                     </li>
@@ -39,6 +39,11 @@
                         <a href="contact.html" role="menuitem" class="navlist__item navlist__item--active">Contact</a>
                     </li>
                 </ul>
+                <div class="menu" id="menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
             </nav>
         </div>
     </header>
@@ -52,20 +57,7 @@
                 resume!</a>
         </div>
     </container>
-    <div class="contact__message">
-        <form class="contact__message-form">
-            <h1>...Or leave me a message</h1>
-            <label for="email">Email</label><br>
-            <input type="text" id="email">
-            <br>
-            <label for="tel">Tel</label><br>
-            <input type="text" id="tel"><br>
-            <label for="msg">Message</label><br>
-            <textarea id="msg"></textarea><br>
 
-            <input type="submit">
-        </form>
-    </div>
     <footer class="page-footer">
         <p>Find me on</p>
         <div>
@@ -78,6 +70,7 @@
         </div>
     </footer>
     <script src="js/tota11y.min.js"></script>
+    <script src="js/app.js"></script>
 </body>
 
 </html>
