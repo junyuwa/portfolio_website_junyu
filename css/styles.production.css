@@ -30,16 +30,6 @@ body {
     flex-direction: column;
 }
 
-#logo {
-    height: 100px;
-    width: auto;
-}
-
-h1 {
-    font-weight: bold;
-    font-size: 50px;
-}
-
 a {
     color: #6D4931;
 }
@@ -140,26 +130,23 @@ button:focus {
 }
 
 
+#logo {
+    height: 100px;
+    width: auto;
+}
+
+h1 {
+    font-weight: bold;
+    font-size: 50px;
+}
+
+/* **********************************PROFILE**************************************** */
 .profile__portrait {
     float: left;
     width: 10em;
     height: auto;
     margin-right: 40px;
     border-radius: 50%;
-}
-
-.page-footer {
-    clear: both;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -ms-flex-direction: column;
-    flex-direction: column;
-    text-align: center;
-    padding-top: 20px;
-    padding-bottom: 20px;
 }
 
 .profile {
@@ -191,6 +178,8 @@ button:focus {
     text-decoration: none;
 }
 
+
+/* **********************************HEADER**************************************** */
 .page-header {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -218,60 +207,11 @@ button:focus {
     text-align: right;
 }
 
-/* .navlist {
-    list-style-type: none;
-} */
-
 .navlist li {
     display: inline-block;
     margin-left: 15px;
 }
 
-.grid {
-    display: -ms-grid;
-    display: grid;
-    -ms-grid-columns: 1fr 20px 1fr 20px 1fr;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-gap: 20px;
-}
-
-.grid__item {
-    padding: 20px;
-    background-color: bisque;
-    margin-right: 10px;
-    margin-left: 10px;
-}
-
-@media all and (max-width: 500px) {
-    .grid {
-        -ms-grid-columns: 1fr;
-        grid-template-columns: 1fr;
-    }
-
-}
-
-@media all and (min-width: 500px) and (max-width: 750px) {
-    .grid {
-        -ms-grid-columns: 1fr 20px 1fr;
-        grid-template-columns: 1fr 1fr;
-    }
-
-}
-
-@media all and (max-width: 750px) {
-    .grid__item:last-child {
-        grid-column: auto / auto;
-        grid-row: auto / auto;
-    }
-
-    h1 {
-        font-size: 22px;
-    }
-
-    .grid {
-        grid-gap: 10px;
-    }
-}
 
 @media all and (max-width: 500px) {
     .navlist {
@@ -354,8 +294,6 @@ nav .menu {
     justify-content: space-between;
     position: relative;
     margin: 20px;
-    color: #6D4931;
-    background-color: #d0b8ac;
 }
 
 nav .menu span {
@@ -415,7 +353,7 @@ nav .menu.active span:nth-child(2) {
         -ms-flex-direction: column;
 
         flex-direction: column;
-        background: #d0b8ac;
+        background: #6D4931;
         position: absolute;
         width: 100%;
         left: 0;
@@ -441,6 +379,55 @@ nav .menu.active span:nth-child(2) {
     }
 }
 
+
+/* *********************************WORK**************************************** */
+.grid {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr 20px 1fr 20px 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 20px;
+}
+
+.grid__item {
+    padding: 20px;
+    background-color: bisque;
+    margin-right: 10px;
+    margin-left: 10px;
+}
+
+@media all and (max-width: 500px) {
+    .grid {
+        -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+    }
+
+}
+
+@media all and (min-width: 500px) and (max-width: 750px) {
+    .grid {
+        -ms-grid-columns: 1fr 20px 1fr;
+        grid-template-columns: 1fr 1fr;
+    }
+
+}
+
+@media all and (max-width: 750px) {
+    .grid__item:last-child {
+        grid-column: auto / auto;
+        grid-row: auto / auto;
+    }
+
+    h1 {
+        font-size: 22px;
+    }
+
+    .grid {
+        grid-gap: 10px;
+    }
+}
+
+/* *************************************ABOUT CONTACT*********************************** */
 .about {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -485,4 +472,19 @@ nav .menu.active span:nth-child(2) {
     text-align: center;
     -ms-flex-pack: distribute;
     justify-content: space-around;
+}
+
+/*****************************FOOTER******************************** */
+.page-footer {
+    clear: both;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    text-align: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
 }
