@@ -5,7 +5,6 @@
 :root {
     --primary-color: #f5f5dc;
     --secondary-color: #6D4931;
-    --third-color: #424A26;
     --button-color: #d0b8ac;
     --button-color-hover: #d0b8ac7f;
     --button-border: 2px solid rgba(0, 0, 0, 0.1);
@@ -27,11 +26,6 @@ body {
 
 a {
     color: var(--secondary-color);
-}
-
-a:visited {
-    /* visited link */
-    color: var(--third-color);
 }
 
 a:active {
@@ -135,17 +129,26 @@ h1 {
     text-align: right;
 }
 
-.navlist li {
-    display: inline-block;
-    margin-left: 15px;
+nav ul {
+    --padding: 20px;
+    --font-size: 25px;
+
+    list-style: none;
+    display: flex;
+    align-items: center;
+    font-size: var(--font-size);
+    overflow-y: hidden;
+    transition: 1s cubic-bezier(.68, -0.55, .27, 10.55);
 }
 
+nav li {
+    padding: var(--padding);
+}
 
 @media all and (max-width: 500px) {
     .navlist {
         display: none;
     }
-
 }
 
 .navlist a {
@@ -163,7 +166,7 @@ h1 {
     left: 0px;
     width: 100%;
     height: 2px;
-    background: var(--third-color);
+    background: var(--secondary-color);
     content: "";
     opacity: 0;
     transition: all 0.3s;
@@ -184,6 +187,7 @@ h1 {
     opacity: 1;
     transform: translateY(0px);
 }
+
 
 nav .menu {
     width: 22px;
@@ -235,7 +239,7 @@ nav .menu.active span:nth-child(2) {
         --height: 0px;
 
         flex-direction: column;
-        background: var(--secondary-color);
+        background: var(--nav-bg);
         position: absolute;
         width: 100%;
         left: 0;
@@ -246,8 +250,18 @@ nav .menu.active span:nth-child(2) {
 
     nav ul.active {
         --height: calc((((var(--padding) * 2) + (var(--font-size) * 1.5))) * var(--childenNumber));
-        /*   (Block Level Padding + The Font Size) * The Number of Children   */
+
         transition: 1s ease;
+    }
+
+    nav ul li {
+        width: 100%;
+        text-align: center;
+    }
+
+    nav ul li a {
+        width: 100%;
+        text-transform: capitalize;
     }
 }
 
@@ -264,6 +278,17 @@ nav .menu.active span:nth-child(2) {
     background-color: bisque;
     margin-right: 10px;
     margin-left: 10px;
+}
+
+.project-name {
+    font-family: bold;
+    margin-bottom: 10px;
+}
+
+.project-title {
+    padding: 20px;
+    display: flex;
+    justify-content: space-around;
 }
 
 @media all and (max-width: 500px) {
@@ -320,6 +345,14 @@ nav .menu.active span:nth-child(2) {
     flex-direction: column;
     text-align: center;
     justify-content: space-around;
+}
+
+#resume {
+    margin: 10px;
+}
+
+#resume-button {
+    text-decoration: none;
 }
 
 /*****************************FOOTER******************************** */

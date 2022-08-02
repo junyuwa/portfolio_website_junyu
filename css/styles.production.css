@@ -34,10 +34,6 @@ a {
     color: #6D4931;
 }
 
-a:visited {
-    /* visited link */
-    color: #424A26;
-}
 
 a:active {
     color: #6D4931;
@@ -207,17 +203,29 @@ h1 {
     text-align: right;
 }
 
-.navlist li {
-    display: inline-block;
-    margin-left: 15px;
+nav ul {
+    list-style: none;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    font-size: 25px;
+    overflow-y: hidden;
+    -webkit-transition: 1s cubic-bezier(.68, -0.55, .27, 10.55);
+    -o-transition: 1s cubic-bezier(.68, -0.55, .27, 10.55);
+    transition: 1s cubic-bezier(.68, -0.55, .27, 10.55);
 }
 
+nav li {
+    padding: undefined;
+}
 
 @media all and (max-width: 500px) {
     .navlist {
         display: none;
     }
-
 }
 
 .navlist a {
@@ -276,6 +284,7 @@ h1 {
     -ms-transform: translateY(0px);
     transform: translateY(0px);
 }
+
 
 nav .menu {
     width: 22px;
@@ -353,7 +362,7 @@ nav .menu.active span:nth-child(2) {
         -ms-flex-direction: column;
 
         flex-direction: column;
-        background: #6D4931;
+        background: undefined;
         position: absolute;
         width: 100%;
         left: 0;
@@ -372,10 +381,22 @@ nav .menu.active span:nth-child(2) {
     }
 
     nav ul.active {
-        /*   (Block Level Padding + The Font Size) * The Number of Children   */
+
         -webkit-transition: 1s ease;
+
         -o-transition: 1s ease;
+
         transition: 1s ease;
+    }
+
+    nav ul li {
+        width: 100%;
+        text-align: center;
+    }
+
+    nav ul li a {
+        width: 100%;
+        text-transform: capitalize;
     }
 }
 
@@ -394,6 +415,21 @@ nav .menu.active span:nth-child(2) {
     background-color: bisque;
     margin-right: 10px;
     margin-left: 10px;
+}
+
+.project-name {
+    font-family: bold;
+    margin-bottom: 10px;
+}
+
+
+.project-title {
+    padding: 20px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: distribute;
+    justify-content: space-around;
 }
 
 @media all and (max-width: 500px) {
@@ -472,6 +508,14 @@ nav .menu.active span:nth-child(2) {
     text-align: center;
     -ms-flex-pack: distribute;
     justify-content: space-around;
+}
+
+#resume {
+    margin: 10px;
+}
+
+#resume-button {
+    text-decoration: none;
 }
 
 /*****************************FOOTER******************************** */
