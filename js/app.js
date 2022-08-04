@@ -3,7 +3,7 @@
 const navigation = document.getElementById("navlist");
 const menu = document.getElementById("menu");
 
-navigation.addEventListener("click", () => {
+menu.addEventListener("click", () => {
     // The navigation.children.length means the following :-
     // The children inside a parent are basically an array of elements; So, here I'm finding the length of the array aka how many children are inside the nav bar.
 

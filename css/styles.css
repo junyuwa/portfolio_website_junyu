@@ -16,9 +16,9 @@ body {
     font-family: 'Open Sans', sans-serif;
     font-weight: 600;
     color: var(--secondary-color);
+    height: 100vh;
     line-height: 1.5em;
     font-size: 25px;
-    height: 100vh;
     display: flex;
     justify-content: space-between;
     flex-direction: column;
@@ -66,11 +66,6 @@ button:focus,
 }
 
 
-#logo {
-    height: 100px;
-    width: auto;
-}
-
 h1 {
     font-weight: bold;
     font-size: 50px;
@@ -94,8 +89,7 @@ h1 {
 .profile__text,
 .profile__heading {
     flex: 1 1 100px;
-    padding-top: 5px;
-    padding-bottom: 5px;
+    padding: 5px;
 }
 
 .profile:last-child {
@@ -108,6 +102,39 @@ h1 {
     margin-top: 20px;
     padding: 10px 10px;
     text-decoration: none;
+}
+
+@media all and (max-width: 700px) {
+    .profile {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    ;
+
+    .profile img {
+        order: 1;
+    }
+
+    ;
+
+    .profile h1 {
+        order: 2;
+        font-size: 50px;
+        font-weight: bolder;
+    }
+
+    ;
+
+    .profile__text-container {
+        order: 3;
+        margin: 10px;
+    }
+
+    ;
+
 }
 
 
@@ -129,6 +156,10 @@ h1 {
     text-align: right;
 }
 
+
+
+/* menu code */
+
 nav ul {
     --padding: 20px;
     --font-size: 25px;
@@ -141,14 +172,8 @@ nav ul {
     transition: 1s cubic-bezier(.68, -0.55, .27, 10.55);
 }
 
-nav li {
+nav ul li {
     padding: var(--padding);
-}
-
-@media all and (max-width: 500px) {
-    .navlist {
-        display: none;
-    }
 }
 
 .navlist a {
@@ -188,7 +213,15 @@ nav li {
     transform: translateY(0px);
 }
 
+nav ul.active {
+    --height: calc((((var(--padding) * 2) + (var(--font-size) * 1.5))) * var(--childenNumber));
 
+    transition: 1s ease;
+}
+
+
+
+/* hamburger code  */
 nav .menu {
     width: 22px;
     height: 16px;
@@ -230,33 +263,37 @@ nav .menu.active span:nth-child(2) {
     transform: scale(0);
 }
 
+/* end hamburger code  */
+
 @media (max-width: 910px) {
     nav .menu {
         display: flex;
     }
 
+    .navlist {
+        display: none;
+    }
+
+    .navlist.active {
+        display: flex;
+    }
+
     nav ul {
         --height: 0px;
-
         flex-direction: column;
         background: var(--nav-bg);
         position: absolute;
         width: 100%;
         left: 0;
-        top: 56px;
+        top: 80px;
+        /*56px;*/
         height: var(--height);
         transition: 1s cubic-bezier(.68, -0.55, .27, 1.55);
     }
 
-    nav ul.active {
-        --height: calc((((var(--padding) * 2) + (var(--font-size) * 1.5))) * var(--childenNumber));
-
-        transition: 1s ease;
-    }
-
     nav ul li {
         width: 100%;
-        text-align: center;
+        text-align: right;
     }
 
     nav ul li a {
@@ -264,6 +301,7 @@ nav .menu.active span:nth-child(2) {
         text-transform: capitalize;
     }
 }
+
 
 
 /* *********************************WORK**************************************** */
@@ -311,7 +349,7 @@ nav .menu.active span:nth-child(2) {
         grid-row: auto / auto;
     }
 
-    h1 {
+    .project h1 {
         font-size: 22px;
     }
 
