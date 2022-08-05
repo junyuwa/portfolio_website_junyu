@@ -2,20 +2,11 @@
     box-sizing: border-box;
 }
 
-:root {
-    --primary-color: #f5f5dc;
-    --secondary-color: #6D4931;
-    --button-color: #d0b8ac;
-    --button-color-hover: #d0b8ac7f;
-    --button-border: 2px solid rgba(0, 0, 0, 0.1);
-    --button-border-hover: 3px solid rgba(0, 0, 0, 0.1);
-}
-
 body {
-    background-color: var(--primary-color);
+    background-color: #f5f5dc;
     font-family: 'Open Sans', sans-serif;
     font-weight: 600;
-    color: var(--secondary-color);
+    color: #6D4931;
     height: 100vh;
     line-height: 1.5em;
     font-size: 25px;
@@ -25,44 +16,89 @@ body {
 }
 
 a {
-    color: var(--secondary-color);
+    color: #6D4931;
 }
 
 a:active {
-    color: var(--secondary-color);
+    color: #6D4931;
 }
 
-button,
+button {
+    /* overwrites browser defaults and resets the border */
+    border: none;
+    /* takes the font from the outer container */
+    font-family: inherit;
+    /* styles the background color, font color, and text decoration (underline, etc.) of the button */
+    background-color: #d0b8ac;
+    color: #6D4931;
+    /* text-decoration: none; */
+    /*adds spacing to the button (this will be discussed more in-depth later) */
+    padding: 10px;
+    border-radius: 3px;
+    /* gives the button a bottom border with a width of 2px, a type of solid, and a color in RGBA format */
+    border-bottom: 2px solid rgba(0, 0, 0, 0.1);
+    border-right: 2px solid rgba(0, 0, 0, 0.1);
+    transition-duration: 0.2s;
+    transition-property: opacity;
+}
+
 .button {
     /* overwrites browser defaults and resets the border */
     border: none;
     /* takes the font from the outer container */
     font-family: inherit;
     /* styles the background color, font color, and text decoration (underline, etc.) of the button */
-    background-color: var(--button-color);
-    color: var(--secondary-color);
+    background-color: #d0b8ac;
+    color: #6D4931;
     /* text-decoration: none; */
     /*adds spacing to the button (this will be discussed more in-depth later) */
     padding: 10px;
     border-radius: 3px;
     /* gives the button a bottom border with a width of 2px, a type of solid, and a color in RGBA format */
-    border-bottom: var(--button-border);
-    border-right: var(--button-border);
+    border-bottom: 2px solid rgba(0, 0, 0, 0.1);
+    border-right: 2px solid rgba(0, 0, 0, 0.1);
     transition-duration: 0.2s;
     transition-property: opacity;
 }
 
-button:hover,
-button:focus,
-.button:focus,
+button:hover {
+    /* lets the mouse appear as a hand when hovering over the button */
+    cursor: pointer;
+    /* reduces the opacity of the button to 80% */
+    opacity: 0.8;
+    background-color: #d0b8ac7f;
+    border-bottom: 3px solid rgba(0, 0, 0, 0.1);
+    border-right: 3px solid rgba(0, 0, 0, 0.1);
+}
+
+button:focus {
+    /* lets the mouse appear as a hand when hovering over the button */
+    cursor: pointer;
+    /* reduces the opacity of the button to 80% */
+    opacity: 0.8;
+    background-color: #d0b8ac7f;
+    border-bottom: 3px solid rgba(0, 0, 0, 0.1);
+    border-right: 3px solid rgba(0, 0, 0, 0.1);
+}
+
+.button:focus {
+    /* lets the mouse appear as a hand when hovering over the button */
+    cursor: pointer;
+    /* reduces the opacity of the button to 80% */
+    opacity: 0.8;
+    background-color: #d0b8ac7f;
+    border-bottom: 3px solid rgba(0, 0, 0, 0.1);
+    border-right: 3px solid rgba(0, 0, 0, 0.1);
+}
+
 .button:hover {
     /* lets the mouse appear as a hand when hovering over the button */
     cursor: pointer;
     /* reduces the opacity of the button to 80% */
     opacity: 0.8;
-    background-color: var(--button-color-hover);
-    border-bottom: var(--button-border-hover);
-    border-right: var(--button-border-hover);
+    background-color: #d0b8ac7f;
+    border-bottom: 3px solid rgba(0, 0, 0, 0.1);
+    border-right: 3px solid rgba(0, 0, 0, 0.1);
 }
 
 
@@ -157,23 +193,20 @@ h1 {
 }
 
 
-
 /* menu code */
 
 nav ul {
-    --padding: 20px;
-    --font-size: 25px;
 
     list-style: none;
     display: flex;
     align-items: center;
-    font-size: var(--font-size);
+    font-size: 25px;
     overflow-y: hidden;
     transition: 1s cubic-bezier(.68, -0.55, .27, 10.55);
 }
 
 nav ul li {
-    padding: var(--padding);
+    padding: 20px;
 }
 
 .navlist a {
@@ -185,13 +218,25 @@ nav ul li {
     cursor: pointer;
 }
 
-.navlist a:before,
+.navlist a:before {
+    position: absolute;
+    left: 0px;
+    width: 100%;
+    height: 2px;
+    background: #6D4931;
+    /* cyj 这个颜色不对导致的 --third-color*/
+    content: "";
+    opacity: 0;
+    transition: all 0.3s;
+}
+
 .navlist a:after {
     position: absolute;
     left: 0px;
     width: 100%;
     height: 2px;
-    background: var(--secondary-color);
+    background: #6D4931;
+    /* cyj 这个颜色不对导致的 --third-color*/
     content: "";
     opacity: 0;
     transition: all 0.3s;
@@ -213,11 +258,14 @@ nav ul li {
     transform: translateY(0px);
 }
 
+
 nav ul.active {
-    --height: calc((((var(--padding) * 2) + (var(--font-size) * 1.5))) * var(--childenNumber));
 
     transition: 1s ease;
 }
+
+/* end menu code */
+
 
 
 
@@ -238,13 +286,13 @@ nav .menu span {
     width: 100%;
     height: 2px;
     border-radius: 99px;
-    background: var(--button-color);
+    background: #d0b8ac;
     transition: 0.3s ease;
     transform-origin: left;
 }
 
 nav .menu.active span {
-    background: var(--button-color);
+    background: #d0b8ac;
 }
 
 nav .menu.active span:nth-child(1) {
@@ -265,6 +313,7 @@ nav .menu.active span:nth-child(2) {
 
 /* end hamburger code  */
 
+
 @media (max-width: 910px) {
     nav .menu {
         display: flex;
@@ -279,21 +328,26 @@ nav .menu.active span:nth-child(2) {
     }
 
     nav ul {
-        --height: 0px;
         flex-direction: column;
-        background: var(--nav-bg);
+        background: #d0b8ac;
         position: absolute;
         width: 100%;
         left: 0;
         top: 80px;
-        /*56px;*/
-        height: var(--height);
+        height: 0px;
         transition: 1s cubic-bezier(.68, -0.55, .27, 1.55);
+    }
+
+    @media (max-width: 910px) {
+
+        nav ul {
+            height: 0px;
+        }
     }
 
     nav ul li {
         width: 100%;
-        text-align: right;
+        text-align: center;
     }
 
     nav ul li a {
@@ -301,6 +355,8 @@ nav .menu.active span:nth-child(2) {
         text-transform: capitalize;
     }
 }
+
+
 
 
 
