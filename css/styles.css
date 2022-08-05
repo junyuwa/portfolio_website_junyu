@@ -2,11 +2,20 @@
     box-sizing: border-box;
 }
 
+:root {
+    --primary-color: #f5f5dc;
+    --secondary-color: #6D4931;
+    --button-color: #d0b8ac;
+    --button-color-hover: #d0b8ac7f;
+    --button-border: 2px solid rgba(0, 0, 0, 0.1);
+    --button-border-hover: 3px solid rgba(0, 0, 0, 0.1);
+}
+
 body {
-    background-color: #f5f5dc;
+    background-color: var(--primary-color);
     font-family: 'Open Sans', sans-serif;
     font-weight: 600;
-    color: #6D4931;
+    color: var(--secondary-color);
     height: 100vh;
     line-height: 1.5em;
     font-size: 25px;
@@ -16,89 +25,44 @@ body {
 }
 
 a {
-    color: #6D4931;
+    color: var(--secondary-color);
 }
 
 a:active {
-    color: #6D4931;
+    color: var(--secondary-color);
 }
 
-button {
-    /* overwrites browser defaults and resets the border */
-    border: none;
-    /* takes the font from the outer container */
-    font-family: inherit;
-    /* styles the background color, font color, and text decoration (underline, etc.) of the button */
-    background-color: #d0b8ac;
-    color: #6D4931;
-    /* text-decoration: none; */
-    /*adds spacing to the button (this will be discussed more in-depth later) */
-    padding: 10px;
-    border-radius: 3px;
-    /* gives the button a bottom border with a width of 2px, a type of solid, and a color in RGBA format */
-    border-bottom: 2px solid rgba(0, 0, 0, 0.1);
-    border-right: 2px solid rgba(0, 0, 0, 0.1);
-    transition-duration: 0.2s;
-    transition-property: opacity;
-}
-
+button,
 .button {
     /* overwrites browser defaults and resets the border */
     border: none;
     /* takes the font from the outer container */
     font-family: inherit;
     /* styles the background color, font color, and text decoration (underline, etc.) of the button */
-    background-color: #d0b8ac;
-    color: #6D4931;
+    background-color: var(--button-color);
+    color: var(--secondary-color);
     /* text-decoration: none; */
     /*adds spacing to the button (this will be discussed more in-depth later) */
     padding: 10px;
     border-radius: 3px;
     /* gives the button a bottom border with a width of 2px, a type of solid, and a color in RGBA format */
-    border-bottom: 2px solid rgba(0, 0, 0, 0.1);
-    border-right: 2px solid rgba(0, 0, 0, 0.1);
+    border-bottom: var(--button-border);
+    border-right: var(--button-border);
     transition-duration: 0.2s;
     transition-property: opacity;
 }
 
-button:hover {
-    /* lets the mouse appear as a hand when hovering over the button */
-    cursor: pointer;
-    /* reduces the opacity of the button to 80% */
-    opacity: 0.8;
-    background-color: #d0b8ac7f;
-    border-bottom: 3px solid rgba(0, 0, 0, 0.1);
-    border-right: 3px solid rgba(0, 0, 0, 0.1);
-}
-
-button:focus {
-    /* lets the mouse appear as a hand when hovering over the button */
-    cursor: pointer;
-    /* reduces the opacity of the button to 80% */
-    opacity: 0.8;
-    background-color: #d0b8ac7f;
-    border-bottom: 3px solid rgba(0, 0, 0, 0.1);
-    border-right: 3px solid rgba(0, 0, 0, 0.1);
-}
-
-.button:focus {
-    /* lets the mouse appear as a hand when hovering over the button */
-    cursor: pointer;
-    /* reduces the opacity of the button to 80% */
-    opacity: 0.8;
-    background-color: #d0b8ac7f;
-    border-bottom: 3px solid rgba(0, 0, 0, 0.1);
-    border-right: 3px solid rgba(0, 0, 0, 0.1);
-}
-
+button:hover,
+button:focus,
+.button:focus,
 .button:hover {
     /* lets the mouse appear as a hand when hovering over the button */
     cursor: pointer;
     /* reduces the opacity of the button to 80% */
     opacity: 0.8;
-    background-color: #d0b8ac7f;
-    border-bottom: 3px solid rgba(0, 0, 0, 0.1);
-    border-right: 3px solid rgba(0, 0, 0, 0.1);
+    background-color: var(--button-color-hover);
+    border-bottom: var(--button-border-hover);
+    border-right: var(--button-border-hover);
 }
 
 
@@ -192,21 +156,31 @@ h1 {
     text-align: right;
 }
 
+/*nav {
+    display: flex;
+    align-items: center;
+    position: fixed;
+    width: 100%;
+}cyj*/
+
+
 
 /* menu code */
 
 nav ul {
+    --padding: 20px;
+    --font-size: 25px;
 
     list-style: none;
     display: flex;
     align-items: center;
-    font-size: 25px;
+    font-size: var(--font-size);
     overflow-y: hidden;
     transition: 1s cubic-bezier(.68, -0.55, .27, 10.55);
 }
 
 nav ul li {
-    padding: 20px;
+    padding: var(--padding);
 }
 
 .navlist a {
@@ -218,25 +192,13 @@ nav ul li {
     cursor: pointer;
 }
 
-.navlist a:before {
-    position: absolute;
-    left: 0px;
-    width: 100%;
-    height: 2px;
-    background: #6D4931;
-    /* cyj 这个颜色不对导致的 --third-color*/
-    content: "";
-    opacity: 0;
-    transition: all 0.3s;
-}
-
+.navlist a:before,
 .navlist a:after {
     position: absolute;
     left: 0px;
     width: 100%;
     height: 2px;
-    background: #6D4931;
-    /* cyj 这个颜色不对导致的 --third-color*/
+    background: var(--secondary-color);
     content: "";
     opacity: 0;
     transition: all 0.3s;
@@ -260,9 +222,11 @@ nav ul li {
 
 
 nav ul.active {
+    --height: calc((((var(--padding) * 2) + (var(--font-size) * 1.5))) * var(--childenNumber));
 
     transition: 1s ease;
 }
+
 
 /* end menu code */
 
@@ -286,13 +250,13 @@ nav .menu span {
     width: 100%;
     height: 2px;
     border-radius: 99px;
-    background: #d0b8ac;
+    background: var(--button-color);
     transition: 0.3s ease;
     transform-origin: left;
 }
 
 nav .menu.active span {
-    background: #d0b8ac;
+    background: var(--button-color);
 }
 
 nav .menu.active span:nth-child(1) {
@@ -328,21 +292,16 @@ nav .menu.active span:nth-child(2) {
     }
 
     nav ul {
+        --height: 0px;
         flex-direction: column;
-        background: #d0b8ac;
+        background: var(--button-color);
         position: absolute;
         width: 100%;
         left: 0;
         top: 80px;
-        height: 0px;
+        /*56px;*/
+        height: var(--height);
         transition: 1s cubic-bezier(.68, -0.55, .27, 1.55);
-    }
-
-    @media (max-width: 910px) {
-
-        nav ul {
-            height: 0px;
-        }
     }
 
     nav ul li {
@@ -355,8 +314,6 @@ nav .menu.active span:nth-child(2) {
         text-transform: capitalize;
     }
 }
-
-
 
 
 
