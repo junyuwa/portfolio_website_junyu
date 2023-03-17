@@ -23,14 +23,11 @@
 <body>
     <header>
         <div class="page-header">
-            <img src="img/logo.png" class="page-header__item" alt="logo" id="logo">
+            <img src="img/logo.png" class="page-header__item" alt="logo" id="logo" height="130em">
             <nav class="main-nav page-header__item">
                 <ul role="menubar" class="navlist" id="navlist">
                     <li role="presentation">
                         <a href="index.html" role="menuitem" class="navlist__item">Home</a>
-                    </li>
-                    <li role="presentation">
-                        <a href="about.html" role="menuitem" class="navlist__item">About</a>
                     </li>
                     <li role="presentation">
                         <a href="projects.html" role="menuitem" class="navlist__item navlist__item--active">Projects</a>
@@ -49,36 +46,166 @@
 
 
         <section class="project">
-            <h1 class="project-title">Projects</h1>
-            <div class="grid">
-                <!-- Grid items will live here -->
-                <div class="grid__item">
-                    <h2 class="project-name">PingPong Score Keeper</h2>
-                    <p>
-                        A simple web app realized by JavaScript to keep scores of a PingPong game, with a template built
-                        by
-                        HTML, CSS and Bootstrap.
-                    </p>
-                    <a href="https://github.com/junyuwa/PingPong-Score-Keeper" target=”_blank”>See project on GitHub</a>
-                </div>
-                <div class="grid__item">
-                    <h2 class="project-name">To-Do List</h2>
-                    <p>
-                        Written in jQuery, this is a web app for you to add, delete and cross out items in a to-do list
-                    </p>
-                    <a href="https://github.com/junyuwa/to-do-list-app" target=”_blank”>See project on GitHub</a>
-                </div>
-                <div class="grid__item">
-                    <h2 class="project-name">Pokédex</h2>
-                    <p>
-                        Fetching data from an API for all the pokémon, this project incorporates JavaScript and
-                        Bootstrap to
-                        provide a simple database for looking up pokémons.
-                    </p>
-                    <a href="https://github.com/junyuwa/js-project-Pokedex" target=”_blank”>See project on GitHub</a>
+
+            <div class="card-wide leftright-spacing">
+                <div class="card-image">
+                    <a href="https://github.com/junyuwa/yelp-business-search">
+                        <img src="./img/yelp.gif">
+                    </a>
                 </div>
 
+                <div class="card-content">
+                    <h3><a style="font-weight:bold" href="https://github.com/junyuwa/yelp-business-search"
+                            target=”_blank”>Yelp Business
+                            Search</a>
+                    </h3>
+                    <p>A full-stack single page web application with frontend constructed in Angular and backend
+                        constructed in Node.js. User can search for business keywords with the aid of an autocomplete
+                        function, set distance and category, manually input or have the app auto-detect user location. A
+                        list of business fetched from Yelp fusion API will be returned, with business details, picture
+                        carousel, google map location and reviews available. User can also make an
+                        reservation through reservation form and have the info stored in local storage. The
+                        app is partially deployed on Google Cloud Platform.
+                    </p><br>
+                    <p><a href="https://yelp-business-search.netlify.app/" target=”_blank”>Live web page demo</a></p>
+                    <br>
+                    <ul class="flat-list chips-list">
+                        <li>Angular</li>
+                        <li>TypeScript</li>
+                        <li>Bootstrap</li>
+                        <li>Node.js</li>
+                        <li>Express</li>
+                        <li>Google Cloud Platform</li>
+                    </ul>
+                </div>
             </div>
+
+
+            <div class="card-wide leftright-spacing">
+                <div class="card-image">
+                    <a href="https://github.com/junyuwa/myMovieAPI-client">
+                        <img src="./img/movie.gif">
+                    </a>
+                </div>
+
+                <div class="card-content">
+                    <h3><b><a style="font-weight:bold" href="https://github.com/junyuwa/myMovieAPI-client"
+                                target=”_blank”>My Movie Base</a></b>
+                    </h3>
+                    <p>A full-stack single page web application with frontend constructed in React and backend
+                        constructed in Node.js. Token authroization and user autehntication are implemented for data
+                        security. Fetching movie and user data from a MongoDB database, the app allows users to sign up
+                        and renders fetched data in neatly designed Bootstrap layout upon login. User can also search
+                        for a movie, add movies to or remove movies from their favorite list which is displayed on the
+                        personal profile
+                        page. Access to updating user info or deregistering a user is provided too. The app is
+                        partially deployed on Heroku.
+                    </p><br>
+                    <p><a href="https://my-movie-base.netlify.app/" target=”_blank”>Live web page demo</a></p><br>
+                    <ul class="flat-list chips-list">
+                        <li>React</li>
+                        <li>JavaScript</li>
+                        <li>Bootstrap</li>
+                        <li>Node.js</li>
+                        <li>Express</li>
+                        <li>Passport</li>
+                        <li>JWT Token</li>
+                        <li>MongoDB</li>
+                        <li>Heroku</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="card-wide leftright-spacing">
+                <div class="card-image">
+                    <a href="https://github.com/junyuwa/js-project-Pokedex">
+                        <img src="./img/pokedex.gif">
+                    </a>
+                </div>
+
+                <div class="card-content">
+                    <h3><a style="font-weight:bold" href="https://github.com/junyuwa/js-project-Pokedex"
+                            target=”_blank”>Pokédex</a></h3>
+                    <p>Fetching data from an API for all the pokémon, this project incorporates JavaScript and
+                        Bootstrap to provide a simple database for looking up pokémons, with pop-up modals to display
+                        detail when the view details button is clicked.
+                    </p>
+                    <ul class="flat-list chips-list">
+                        <li>HTML</li>
+                        <li>CSS</li>
+                        <li>Javascript</li>
+                        <li>Bootstrap</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="card-wide leftright-spacing">
+                <div class="card-image">
+                    <a href="https://github.com/junyuwa/PingPong-Score-Keeper">
+                        <img src="./img/scorekeeper.gif">
+                    </a>
+                </div>
+
+                <div class="card-content">
+                    <h3><a style="font-weight:bold" href="https://github.com/junyuwa/PingPong-Score-Keeper"
+                            target=”_blank”>PingPong Score
+                            Keeper</a></h3>
+                    <p>A web app realized by JavaScript to keep scores of a PingPong game, with a template built
+                        by HTML, CSS and Bulma. You can set winning score, document each player's score change, and
+                        reset.
+                    </p>
+                    <ul class="flat-list chips-list">
+                        <li>HTML</li>
+                        <li>JavaScript</li>
+                        <li>Bulma</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="card-wide leftright-spacing">
+                <div class="card-image">
+                    <a href="https://github.com/junyuwa/to-do-list-app">
+                        <img src="./img/todo.gif">
+                    </a>
+                </div>
+
+                <div class="card-content">
+                    <h3><a style="font-weight:bold" href="https://github.com/junyuwa/to-do-list-app"
+                            target=”_blank”>To-Do List</a></h3>
+                    <p>Written with jQuery, this is a web app for you to add, delete and cross out items in a to-do
+                        list, implementing CRUD operations.
+                    </p>
+                    <ul class="flat-list chips-list">
+                        <li>HTML</li>
+                        <li>CSS</li>
+                        <li>Javascript</li>
+                        <li>jQuery</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="card-wide leftright-spacing">
+                <div class="card-image">
+                    <a href="https://www.junyuwang.info/">
+                        <img src="./img/ux.gif">
+                    </a>
+                </div>
+
+                <div class="card-content">
+                    <h3><a style="font-weight:bold" href="https://www.junyuwang.info/" target=”_blank”>UX/UI Design
+                            Works</a></h3>
+                    <p>If you're also interested, here are my works in UX/UI which include research, design and
+                        development in web and mobile applications.
+                    </p>
+                    <ul class="flat-list chips-list">
+                        <li>Figma</li>
+                        <li>FigJam</li>
+                        <li>WordPress</li>
+                        <li>Amazon MTurk</li>
+                    </ul>
+                </div>
+            </div>
+
         </section>
         <footer class="page-footer">
             <p>Find me on</p>
